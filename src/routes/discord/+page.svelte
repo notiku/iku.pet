@@ -1,8 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    import { discordLink } from '$lib';
 
     onMount(() => {
-        window.location.href = discordLink;
+        window.location.href = 'https://discord.gg/kN4xCcVncj';
     });
 </script>
