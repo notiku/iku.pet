@@ -4,7 +4,7 @@
   let file: File | null = null;
   let error = "";
   let imageUrl = "";
-  const maxFileSizeMB = 50;
+  const maxFileSizeMB = 250;
 
   // Handle file upload using axios
   async function handleUpload() {
