@@ -4,6 +4,7 @@
   let file: File | null = null;
   let error = "";
   let imageUrl = "";
+  let isUploading = false;
   const maxFileSizeMB = 250;
 
   // Handle file upload using axios
@@ -12,6 +13,11 @@
     imageUrl = "";
 
     if (file) {
+      if (isUploading) {
+        error = "Upload in progress. Please wait.";
+        return;
+      }
+
       const fileSizeMB = file.size / (1024 * 1024);
 
       if (fileSizeMB > maxFileSizeMB) {
@@ -23,6 +29,7 @@
       formData.append('file', file);
 
       try {
+        isUploading = true;
         const response = await axios.post(
           'https://api.cleesim.com/v1/media/upload',
           formData,
@@ -35,11 +42,14 @@
 
         if (response.status === 200) {
           imageUrl = response.data.image_url || "File uploaded successfully, but no image URL returned.";
+          isUploading = false;
         } else {
           error = `Upload failed: ${response.status} - ${response.statusText}`;
+          isUploading = false;
         }
       } catch (err) {
         console.error("Upload error:", err);
+        isUploading = false;
         if (axios.isAxiosError(err)) {
           error = `An error occurred: ${err.message}`;
         } else {
@@ -64,17 +74,89 @@
 
 <style>
   .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: transparent;
     color: red;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .uploading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: transparent;
+    color: blue;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   .image-preview {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .file-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .upload-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 </style>
 
 <div>
-  <h1>Upload Your File</h1>
-  <input type="file" on:change="{handleFileSelect}" />
-  <button on:click="{handleUpload}">Upload</button>
+  <h1 style="text-align: center;">Upload Your File</h1>
+  <button class="upload-button" on:click="{handleUpload}">Upload</button>
+  <input type="file" on:change="{handleFileSelect}" class="file-input" />
+  {#if isUploading}
+    <p class="uploading">Uploading...</p>
+  {/if}
   {#if error}
     <p class="error">{error}</p>
   {/if}
