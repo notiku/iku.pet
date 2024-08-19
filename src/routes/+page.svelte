@@ -122,7 +122,7 @@
         <a target="_blank" href={discordBotLink}>Fraud Discord Bot</a>
         •
         <a target="_blank" href={donateLink}>Donate</a>
-        <!-- • -->
-        <!-- <a href={legalNoticeLink}>Legal Notice</a> -->
+        •
+        <a target="_blank" href="/upload">File Host</a>
     </div>
 </div>
