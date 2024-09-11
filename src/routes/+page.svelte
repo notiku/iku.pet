@@ -113,7 +113,7 @@
         <div class="subtitle">{subtitle}</div>
     </div>
     <div class="socials">
-        <a target="_blank" href={discordLink} tooltip="schizo"><img src="discord.svg" class="discord" alt=""></a>
+        <a target="_blank" href={discordLink} tooltip="ikuware"><img src="discord.svg" class="discord" alt=""></a>
         <a target="_blank" href={githubLink} tooltip="@notiku"><img src="github.svg" class="github" alt=""></a>
         <!-- <a target="_blank" href={twitterLink}><img src="twitter.svg" class="twitter" alt=""></a> -->
         <a target="_blank" href={`mailto:${email}`} tooltip="contact@iku.pet"><img src="mail.svg" class="mail" alt=""></a>
