@@ -107,6 +107,13 @@
     }
 </style>
 
+<title>iku — home</title>
+<meta name="title" content="iku — home" />
+<meta name="description" content="i code stuff" />
+<meta property="theme-color" content="#D3D3D3">
+<meta name="keywords" content="iku, developer" />
+<meta name="author" content="iku" />
+
 <div class="centered">
     <div class="brand">
         <div class="name">{name}</div>
