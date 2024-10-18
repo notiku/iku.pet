@@ -8,5 +8,5 @@
 
 <title>Infinite Lifting</title>
 <meta name="title" content="Infinite Lifting" />
-<meta name="description" content="join the discord server @ https://discord.gg/EsfTMMsDRn" />
+<meta name="description" content="join the discord server @ discord.gg/EsfTMMsDRn" />
 <meta property="theme-color" content="#D3D3D3">
