@@ -1,13 +1,11 @@
 <script>
     export let name = 'iku';
     export let subtitle = 'i code stuff';
-    export let discordLink = 'https://discord.gg/kN4xCcVncj';
+    export let discordLink = 'https://discord.com/users/664534888656928768';
     export let githubLink = 'https://github.com/notiku';
-    // export let twitterLink = 'https://twitter.com/ikucoder';
-    export let email = 'contact@iku.pet';
-    // export let discordBotLink = 'https://bot.iku.pet/';
+    // export let email = 'contact@iku.pet';
+    export let discordBotLink = 'https://lvl.iku.pet/';
     export let donateLink = 'https://patreon.com/notiku';
-    // export let legalNoticeLink = 'https://iku.pet/legal-notice';
 </script>
 
 <style>
@@ -107,8 +105,8 @@
     }
 </style>
 
-<title>iku — home</title>
-<meta name="title" content="iku — home" />
+<title>iku</title>
+<meta name="title" content="iku" />
 <meta name="description" content="i code stuff" />
 <meta property="theme-color" content="#D3D3D3">
 <meta name="keywords" content="iku, developer" />
@@ -120,12 +118,13 @@
         <div class="subtitle">{subtitle}</div>
     </div>
     <div class="socials">
-        <a target="_blank" href={discordLink} tooltip="ikuware"><img src="discord.svg" class="discord" alt=""></a>
+        <a target="_blank" href={discordLink} tooltip="@iku.pet"><img src="discord.svg" class="discord" alt=""></a>
         <a target="_blank" href={githubLink} tooltip="@notiku"><img src="github.svg" class="github" alt=""></a>
-        <!-- <a target="_blank" href={twitterLink}><img src="twitter.svg" class="twitter" alt=""></a> -->
-        <a target="_blank" href={`mailto:${email}`} tooltip="contact@iku.pet"><img src="mail.svg" class="mail" alt=""></a>
+        <!-- <a target="_blank" href={`mailto:${email}`} tooltip="contact@iku.pet"><img src="mail.svg" class="mail" alt=""></a> -->
     </div>
     <div class="links">
+        <a target="_blank" href={discordBotLink}>Solaris Discord Bot</a>
+        •
         <a target="_blank" href={donateLink}>Donate</a>
     </div>
 </div>
